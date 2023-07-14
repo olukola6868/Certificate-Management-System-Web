@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>C-M GetAllCertificates</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container" id="table">
+    <h2>All Certificates Table</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th id="fName">First Name</th>
+          <th id="lName">Last Name</th>
+          <th id="date">Date</th>
+          <th id="Status">Certificate Status</th>
+        </tr>
+      </thead>
+      <tbody class="tablebody">
+      </tbody>
+    </table>
+  </div>
+
+  <script src="./Gateway.js"></script>
+  <script>
+    const fn = document.getElementById("fName");
+    const ln = document.getElementById("lName");
+    const dat = document.getElementById("Date");
+    const cs = document.getElementById("Certifiate Status");
+    const list = document.querySelector("table")
+
+    const createNew = (name) => {
+      let newDiv = document.createElement("tr")
+      newDiv.innerHTML = `
+      
+        <td id="fName">${name.firstName}</th>
+          <td id="lName">${name.lastName}</th>
+            <td id="date">${name.date}</th>
+              <td id="Status">${name.isGenerated}</th>
+              
+                `;
+      return newDiv;
+    }
+
+    const response = async () => {
+      const id = localStorage.getItem("loginid");
+      const getre = await getRequest(`Certificate/GetAllCertificates`);
+      const getters = getre;
+      console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH", getters);
+      getters.data.forEach(element => {
+        list.appendChild(createNew(element));
+      });
+    };
+    console.log(response());
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

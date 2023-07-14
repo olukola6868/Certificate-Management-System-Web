@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "C-M FrontEnd",
+			"path": "../.."
+		},
+		{
+			"name": "Assets",
+			"path": "../../../Template/Assets"
+		}
+	],
+	"settings": {}
+}

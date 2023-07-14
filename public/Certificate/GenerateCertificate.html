@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+     <title>C-M GenerateCertificate</title>
+     <link rel="stylesheet" href="./GenerateCertificate.css">
+</head>
+
+<body>
+     <div id="all">
+          <div id="drop-target">
+               <div class="containers">
+                    <div id="drop-target d-flex">
+                         <div id="background">
+
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <button onclick="Print()" class="btn btn-primary">Print</button>
+</body>
+<script src="./GenerateCertificate.js"></script>
+<script>
+     const dateEarned = document.getElementById('date-merger');
+     const participantPosition = document.getElementById('participant-position');
+     const participanFirstName = document.getElementById('first-name');
+     const participanLastName = document.getElementById('last-name');
+     const listOfCert = document.getElementById('background');
+
+     // Access the element
+  const ssss = '../build/Assets2/1.png';
+     // Modify the CSS property
+     listOfCert.style.backgroundImage = `url('${ssss}')`;
+
+     const createNew = (name) => {
+          let newDiv = document.createElement('div');
+          newDiv.classList.add("some")
+          newDiv.innerHTML = `
+       
+                    <div id="top">
+                         <div id="imgg">
+                              <img src="/Assets/goldseal.png" id="drag-source" draggable="true" width="70em"
+                                   alt="Draggable Image" class="seal">
+                         </div>
+                         <div id="cert">
+                              <img src="/Assets/certificate_image.png" alt="Draggable image">
+                         </div>
+                    </div>
+                    <div id="middle">
+                         <div id="content">
+                              <div id="head">
+                                   <div contenteditable="true"><span id="present">THIS CERTIFICATE OF APPRECIATION IS
+                                             PRESENTED TO</span></div>
+                              </div>
+                              <div id="name">
+                                   <div id="fflf"><span id="ggg"> <span id="first-name">${name.firstName} ${name.lastName} </span>  </div>
+                              </div>
+                              <div id="blackLine">
+                                   <img style="width: 450px; height: 3px;" src="/Assets/black-line.png" id="black_line"
+                                        alt="Line">
+                              </div>
+                              <div id="appreciation_word">
+                                   <span contenteditable="true" class="Appreciation_word">In Appreciation Of Your
+                                        Outstanding Dedication And
+                                        Commitment</span>
+                              </div><br><br>
+                              <div id="comment">
+                                   <span contenteditable="true" class="Comment">
+                                        In recognition of those who have striven and achieved success in their
+                                        unwavering commitment to this
+                                        organization, our people and the individuals that we serve.
+                                        Thank you for your continued service.
+                                   </span>
+
+                              </div>
+                         </div>
+
+                    </div>
+                    <div id="buttom">
+                         <div id="get">
+                                   <div id="date">
+                                        <span style="text-align: center; color: #daa520; margin-left: -1em;" contenteditable="true"
+                                             class="Date" id="date-merger">${name.date}</span>
+                                        <img style="margin-left: 1em; top: 10em;" src="/Assets/gold-line.png" alt="gold-line"
+                                             id="gold_line">
+                                        <span style="text-align: center; color: #daa520; " contenteditable="true"
+                                             class="D_element">DATE</span>
+                                   </div>
+                              </div>
+                              <div id="get">
+                                   <div id="Signature">
+                                        <span style="text-align: center; color: #daa520; margin-left: 6em;" contenteditable="true"
+                                             class="Date" id="signature-merger">Import Transparent Signature</span>
+                                        <img style="margin-left: 10em;" src="/Assets/gold-line.png" alt="gold-line"
+                                             id="gold_line">
+                                        <span style="text-align: center; color: #daa520; margin-left: 11em;" contenteditable="true"
+                                             class="S_element">SIGNATURE</span>
+                                   </div>
+                              </div>
+                    </div>
+          
+
+          `;
+          return newDiv;
+     }
+
+     // const printButton = document.getElementById(Printbtn)
+     function Print() {
+          window.print();
+          // document.querySelector("#background").print()
+          //write your request to change the state from the bankend
+
+     }
+
+     const response = async () => {
+          const id = localStorage.getItem("loginid");
+          const getre = await getRequest(`Certificate/GetAllUnGeneratedCertificates/${id}`);
+          const getters = getre;
+          getters.data.forEach(element => {
+               // console.log(element);
+               listOfCert.appendChild(createNew(element));
+          });
+     };
+     console.log(response());
+</script>
+
+</html>

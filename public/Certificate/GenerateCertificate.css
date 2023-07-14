@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(56, 47, 47);
+}
+
+.d-flex {
+  margin-bottom: 40%;
+}
+
+.containers {
+  display: flex;
+  gap: 5em;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#background {
+  width: 39em;
+  height: 30em;
+  /* background-image: url("../build/Assets2/1.png"); */
+  background-size: contain;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+
+#imgg {
+  width: 8em;
+}
+
+#top {
+  height: 30%;
+  display: flex;
+  gap: 18vw;
+}
+
+#middle {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.seal {
+  width: 110px;
+  margin-top: 20px;
+  margin-left: 18px;
+}
+
+#middle>div {
+  /* border: solid red 1px; */
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+#head {
+  padding: 1px;
+  height: 15%;
+
+}
+
+#name {
+  height: 25%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+
+}
+
+#blackLine {
+  height: 10%;
+  padding-top: 5px;
+  display: flex;
+  padding-left: 1.33em;
+
+}
+
+.Appreciation_word {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.Comment {
+  text-align: center;
+}
+
+#appreciation_word {
+  display: flex;
+  justify-content: center;
+  height: 10%;
+
+}
+
+#comment {
+  height: 40%;
+  display: flex;
+  justify-content: center;
+}
+
+#present {
+  text-align: center;
+  font-weight: bolder;
+}
+
+#ggg {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+#buttom {
+  height: 6em;
+  display: flex;
+  gap: 10em;
+
+}
+
+#buttom>div {
+  /* border: solid red 1px; */
+  width: 50%;
+}
+
+#date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* margin: 0%; */
+  /* margin-left: 10px; */
+}
+
+
+#get {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+#cert {
+  padding-top: 1em;
+  width: 5%;
+  left: 2px;
+}
+
+#gold_line {
+
+  width: 130px;
+  height: 3px;
+  /* margin: 20px; */
+
+}

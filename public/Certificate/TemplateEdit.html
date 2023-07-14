@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./TemplateEdit.css">
+</head>
+<body>
+    <div class="d-flex all1 align-items-center ">
+        <div class="col-7 all ml-5 align-items-center justify-content-center font-weight-bold mt-3 cert-body mt-3 Abdullah">
+
+        </div>
+        <div class="img_scroll col-4">
+            <img class="mb-3" src="../build/Assets2/Certificate_JB_AC.png" alt="" id="third-image" onclick="display(this.id)" width="300px" height="250px">
+            <img class="mb-3" src="../build/Assets2/76_B_Red-01_REVISED_1.png" alt="" id="first-image" onclick="display(this.id)" width="300px" height="250px">
+            <img class="mb-3" src="../build/Assets2/blue_backgroiund.svg" alt="" id="second-image" onclick="display(this.id)" width="300px" height="250px">
+            <img class="mb-3" src="../build/Assets2/download.svg" alt="" id="fourth-image" onclick="display(this.id)" width="300px" height="250px">
+        </div>
+    </div>
+
+
+
+<script src="./script.js"></script>    
+<script>
+    function display(id) {
+        console.log(id, "tsting...")
+        let value = document.querySelector(`#${id}`)
+        let path = value.src.split('/')
+        console.log(path[path.length - 1])
+        let image = path[path.length - 1]
+        let maindiv = document.querySelector('.cert-body')
+        maindiv.style.background = `url(../build/Assets2/${image})`;
+
+        maindiv.style.backgroundSize = "cover"
+        maindiv.style.backgroundPosition = "cover"
+        maindiv.style.height = "90vh"
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
