@@ -11,21 +11,39 @@
 </head>
 <body>
     <div class="d-flex all1 align-items-center ">
-        <div class="col-7 all ml-5 align-items-center justify-content-center font-weight-bold mt-3 cert-body mt-3 Abdullah">
-
-        </div>
+        <button onclick="next()" class="btn-primary rounded">NEXT</button>
+        <div class="col-7 all ml-5 align-items-center justify-content-center font-weight-bold mt-3 cert-body mt-3 Abdullah"></div>
         <div class="img_scroll col-4">
-            <img class="mb-3" src="../build/Assets2/Certificate_JB_AC.png" alt="" id="third-image" onclick="display(this.id)" width="300px" height="250px">
-            <img class="mb-3" src="../build/Assets2/76_B_Red-01_REVISED_1.png" alt="" id="first-image" onclick="display(this.id)" width="300px" height="250px">
-            <img class="mb-3" src="../build/Assets2/blue_backgroiund.svg" alt="" id="second-image" onclick="display(this.id)" width="300px" height="250px">
-            <img class="mb-3" src="../build/Assets2/download.svg" alt="" id="fourth-image" onclick="display(this.id)" width="300px" height="250px">
+            <img class="mb-3 clickable_image" src="../build/Assets2/1.png" alt="" id="third-image" onclick="display(this.id)" width="300px" height="250px">
+            <img class="mb-3 clickable_image" src="../build/Assets2/2.svg" alt="" id="first-image" onclick="display(this.id)" width="300px" height="250px">
+            <img class="mb-3 clickable_image" src="../build/Assets2/3.png" alt="" id="second-image" onclick="display(this.id)" width="300px" height="250px">
+            <img class="mb-3 clickable_image" src="../build/Assets2/4.svg" alt="" id="fourth-image" onclick="display(this.id)" width="300px" height="250px">
         </div>
     </div>
+    
 
 
 
 <script src="./script.js"></script>    
 <script>
+    function next()
+    {
+        location.href="GenerateCertificate.html"
+    }
+    const selectedImage = document.querySelectorAll(".clickable_image");
+    selectedImage.forEach(selected => 
+    {
+        selected.addEventListener("click", handleClickedImage)
+    });
+    function handleClickedImage(e)
+    {
+        const selectedImageUrl = e.target.src;
+        localStorage.setItem("theImageUrl", selectedImageUrl);
+        localStorage.setItem("theGoldSeal", "./Assets/goldseal.png");
+        localStorage.setItem("theCertImg", "./Assets/certificate_image.png");
+
+
+    }
     function display(id) {
         console.log(id, "tsting...")
         let value = document.querySelector(`#${id}`)

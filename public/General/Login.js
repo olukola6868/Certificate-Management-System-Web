@@ -31,7 +31,7 @@ myform.addEventListener('submit', (x) => {
         });
       }
       else {
-        window.alert(`This is ${value.message}`);
+        window.alert(`${value.message}`);
       }
     })
     .catch((res) => {

@@ -17,11 +17,11 @@
                <div class="containers">
                     <div id="drop-target d-flex">
                          <div id="background">
-
+                              
                          </div>
                     </div>
                </div>
-          </div>
+          </div>y
      </div>
      <button onclick="Print()" class="btn btn-primary">Print</button>
 </body>
@@ -34,9 +34,16 @@
      const listOfCert = document.getElementById('background');
 
      // Access the element
-  const ssss = '../build/Assets2/1.png';
+     // for(let i = 1; i <= 4; i++)
+     // {
+          //const ssss = '../build/Assets2/1.png';
+     // }
+     const theSavedImage = localStorage.getItem("theImageUrl");
+     const theGold = localStorage.getItem("theGoldSeal");
+     const theCert = localStorage.getItem("theCertImg");
      // Modify the CSS property
-     listOfCert.style.backgroundImage = `url('${ssss}')`;
+     listOfCert.style.backgroundImage = `url('${theSavedImage}')`;
+     console.log(theSavedImage);
 
      const createNew = (name) => {
           let newDiv = document.createElement('div');
@@ -45,11 +52,11 @@
        
                     <div id="top">
                          <div id="imgg">
-                              <img src="/Assets/goldseal.png" id="drag-source" draggable="true" width="70em"
+                              <img src="./Assets/goldseal.png" id="drag-source" draggable="true" width="70em"
                                    alt="Draggable Image" class="seal">
                          </div>
                          <div id="cert">
-                              <img src="/Assets/certificate_image.png" alt="Draggable image">
+                              <img src="./Assets/certificate_image.png" alt="Draggable image">
                          </div>
                     </div>
                     <div id="middle">
@@ -95,8 +102,7 @@
                               </div>
                               <div id="get">
                                    <div id="Signature">
-                                        <span style="text-align: center; color: #daa520; margin-left: 6em;" contenteditable="true"
-                                             class="Date" id="signature-merger">Import Transparent Signature</span>
+                                        <span style="text-align: center; color: #daa520; margin-left:" class="Date" id="signature-merger"><img src="../build/Assets2/signature.png" alt="signature" height="70px" width="170px"></span>
                                         <img style="margin-left: 10em;" src="/Assets/gold-line.png" alt="gold-line"
                                              id="gold_line">
                                         <span style="text-align: center; color: #daa520; margin-left: 11em;" contenteditable="true"

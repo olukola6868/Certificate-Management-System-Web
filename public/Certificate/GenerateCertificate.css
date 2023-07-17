@@ -101,6 +101,7 @@ body {
   height: 40%;
   display: flex;
   justify-content: center;
+  margin-top: 1em;
 }
 
 #present {
@@ -129,8 +130,16 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 6em;
   /* margin: 0%; */
   /* margin-left: 10px; */
+}
+#Signature{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 6em;
+  /* margin-left: -2em; */
 }
 
 

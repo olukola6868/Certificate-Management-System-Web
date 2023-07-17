@@ -19,6 +19,7 @@ myform.addEventListener('submit', (x) => {
             console.log(value.status);
             if (value.status == true) {
                 localStorage.setItem('registrationid', value.data.id);
+                window.alert(`${value.message}`)
                 location.href = "login.html"
             }
             else {
